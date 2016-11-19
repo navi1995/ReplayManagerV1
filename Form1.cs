@@ -20,8 +20,8 @@ namespace ReplayManagerv1
         private MainMenu mainMenu1;
         private MenuItem fileMenuItem, leagueDirectoryMenuItem, replayDirectoryMenuItem;
 
-        private string leagueDirectory = @"D:\Riot Games\League of Legends\RADS\solutions\lol_game_client_sln\releases\0.0.1.152\deploy\League of Legends.exe";
-        private string replayDirectory = @"D:\Users\Navi Jador\Documents\League of Legends\Replays\";
+        private string leagueDirectory = (string) Properties.Settings.Default["LeagueDirectory"];
+        private string replayDirectory = (string)Properties.Settings.Default["ReplayDirectory"];
         private string username = "navi1995";
 
         private bool fileOpened = false;
@@ -68,7 +68,8 @@ namespace ReplayManagerv1
             counter++;
             try
             {
-                DirectoryInfo dinfo = new DirectoryInfo(Path.GetDirectoryName(replayDirectory));
+                string test = Path.GetFullPath(replayDirectory);
+                DirectoryInfo dinfo = new DirectoryInfo(Path.GetFullPath(replayDirectory));
                 FileInfo[] Files = dinfo.GetFiles("*.rofl");
                 listView1.Clear();
                 listView1.Columns.Add("File Name", -2);
@@ -99,10 +100,10 @@ namespace ReplayManagerv1
             if (item != null)
             {
                 Process process = new Process();
-                string leaguePath = @"D:\Riot Games\League of Legends\RADS\solutions\lol_game_client_sln\releases\0.0.1.152\deploy\League of Legends.exe";
+                string leaguePath = leagueDirectory;
                 process.StartInfo.FileName = "League of Legends.exe";
                 process.StartInfo.WorkingDirectory = Path.GetDirectoryName(leaguePath);
-                process.StartInfo.Arguments = "\"League Of Legends.exe\" \"D:\\Users\\Navi Jador\\Documents\\League of Legends\\Replays\\" + item.Text;
+                process.StartInfo.Arguments = "\"League Of Legends.exe\" \"" + replayDirectory + "\\" + item.Text;
                 process.Start();
             }
 
@@ -117,6 +118,8 @@ namespace ReplayManagerv1
             {
                 //Implement STRICT checks that it's lol_game_client
                 leagueDirectory = leagueBrowserDialog.FileName;
+                Properties.Settings.Default["LeagueDirectory"] = leagueDirectory;
+                Properties.Settings.Default.Save();
                 refreshReplays();
             } else
             {
@@ -133,6 +136,8 @@ namespace ReplayManagerv1
             {
                 //Implement REPLAY directory checks
                 replayDirectory = replayBrowserDialog.SelectedPath;
+                Properties.Settings.Default["ReplayDirectory"] = replayDirectory;
+                Properties.Settings.Default.Save();
                 refreshReplays();
             } else
             {
