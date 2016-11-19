@@ -7,5 +7,7 @@ Also means users can rename and organise their replays as they see fit!
 ## Planned updates 
 - Adding "View button" rather than double clicking to launch
 - Parsing .rofl files to show champion and user stats (Item builds, champion etc)
+- More headers to identify replays by
+- Allow renaming of files
 - Improving poor UI
 
