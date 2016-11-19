@@ -16,3 +16,11 @@ C:\Users\Navi\Documents\GitHub\ReplayManagerV1\obj\Debug\ReplayManagerv1.csprojR
 C:\Users\Navi\Documents\GitHub\ReplayManagerV1\obj\Debug\ReplayManagerv1.Form1.resources
 C:\Users\Navi\Documents\GitHub\ReplayManagerV1\obj\Debug\ReplayManagerv1.Properties.Resources.resources
 C:\Users\Navi\Documents\GitHub\ReplayManagerV1\obj\Debug\ReplayManagerv1.csproj.GenerateResource.Cache
+D:\Users\Navi Jador\Documents\Visual Studio 2015\Projects\ReplayManagerV1\bin\Debug\ReplayManagerv1.exe.config
+D:\Users\Navi Jador\Documents\Visual Studio 2015\Projects\ReplayManagerV1\obj\Debug\ReplayManagerv1.exe
+D:\Users\Navi Jador\Documents\Visual Studio 2015\Projects\ReplayManagerV1\obj\Debug\ReplayManagerv1.pdb
+D:\Users\Navi Jador\Documents\Visual Studio 2015\Projects\ReplayManagerV1\bin\Debug\ReplayManagerv1.exe
+D:\Users\Navi Jador\Documents\Visual Studio 2015\Projects\ReplayManagerV1\bin\Debug\ReplayManagerv1.pdb
+D:\Users\Navi Jador\Documents\Visual Studio 2015\Projects\ReplayManagerV1\obj\Debug\ReplayManagerv1.Form1.resources
+D:\Users\Navi Jador\Documents\Visual Studio 2015\Projects\ReplayManagerV1\obj\Debug\ReplayManagerv1.Properties.Resources.resources
+D:\Users\Navi Jador\Documents\Visual Studio 2015\Projects\ReplayManagerV1\obj\Debug\ReplayManagerv1.csproj.GenerateResource.Cache

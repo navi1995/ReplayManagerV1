@@ -117,4 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Hint: Replay directory generally looks like this: C:\Users&lt;Insert Your User Name Here&gt;\Documents\LeagueofLegends\Replays
+League directory generally looks like this: C:\Riot Games\League of Legends\RADS\solutions\lol_game_client_sln\releases\0.0.1.152\deploy
+Try to choose the most recent deploy of the build.</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAAMIAAADCAU+JHNcAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAABsUlEQVRIS63VzSuEURTH8achWZDVYMEfYKVYUZZKNtgp5Q9Q5GXBQknI1kJZ+DckK6WUlRQpYeGl
+        RKQsvORtfA/3jnOv42FqTn0W87tzzjw9M3OeJJfL/YqqxxCWsIFrXGAF0+hC1ur17DBJKjGHR0iQ5h5j
+        KFH9WWxizRreiyvoIf+xjSbI8F2X/Rjejbf8YeFecR5kangLHvIH3/YxjEZUoQbtkNtyiPj9ITe8Djf5
+        8MszRvwFWKhyzLj36t5v7o3zQZgkL2iPB1qoahxA92tJGeIvNfXKPUpul9xC3Rv7/NXo4BgZa2CM2nI9
+        aZJl9eId/dYwC7Xm+n7z839QbGZYTGZYTGZYTFJ/flFWo4XqU31iCkFg2bSGxagMjlyP14ogiMlWTN33
+        HjXierw9lwehJovsv8Nl+cl60f2D7iwINVnbC6iIB2rUKOJld4Iqdx4cWM4wiU7UQla2rG5Z4dYeukWD
+        uoDgUB4W8tDQWSGe0OaHxx8gVyOPu2bsuKwQp+jQw/0HyP9AtmKNCksxDusJF7vDBMr14PwsK/Qo2fc9
+        mMUq5LlxiXUsYgApv7Rc8gHVP/J4dVYoUAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAAMIAAADCAU+JHNcAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAABCUlEQVRIS92WQQrCQAxFsxXc9gRuPZ9gwYN4AG/gHdx4FVs3ghsdf+JMSWxkDNaNA0/6fuZ3xCKU
+        UkpvwZqBHbgADjSc8WzmdQtuWMDaAn1Tj63XLbghg9WAK7iBhTNf5BnvaV7nBTdksFrAF3tvzvAs72m9
+        OfP8IDrnjVPS6wM6NZiKbjigUIY6i+D1hwuRvzsAix/+STk/K/lt1VweZnbTl8zI+ICvXDIjlULUJTNS
+        KURdMiOVQtQlM1IpRF0yI5VC1CUzUilEXTIjlULUJTMyLvz2jxbF6w8XItMccDeZEaJj3rTU+SdwJ3cP
+        JjdCtM6bvmFl7mmEaA42oAe69Anc4S+oXmMSPQCFt8toOLz0OgAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

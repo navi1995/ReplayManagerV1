@@ -19,6 +19,8 @@ namespace ReplayManagerv1
         private FolderBrowserDialog replayBrowserDialog;
         private MainMenu mainMenu1;
         private MenuItem fileMenuItem, leagueDirectoryMenuItem, replayDirectoryMenuItem;
+        private List<FileInfo> markedItems = new List<FileInfo>();
+        private Dictionary<string, FileInfo> replayFiles = new Dictionary<string, FileInfo>();
 
         private string leagueDirectory = (string) Properties.Settings.Default["LeagueDirectory"];
         private string replayDirectory = (string)Properties.Settings.Default["ReplayDirectory"];
@@ -50,7 +52,7 @@ namespace ReplayManagerv1
 
             // Set the help text description for the FolderBrowserDialog.
             this.replayBrowserDialog.Description = "Select location of your replay (.rofl) files";
-
+            this.replayBrowserDialog.SelectedPath = Environment.SpecialFolder.MyDocuments.ToString();
             // Do not allow the user to create new files via the FolderBrowserDialog.
             this.replayBrowserDialog.ShowNewFolderButton = false;
             this.leagueBrowserDialog.Filter = "League of Legends.exe (*.exe)|League Of Legends.exe";
@@ -61,6 +63,7 @@ namespace ReplayManagerv1
             this.Text = "League of Legends replay manager";
             InitializeComponent();
             refreshReplays();
+            listView1.MouseDoubleClick += new MouseEventHandler(listView1_MouseDoubleClick);
         }
 
         private void refreshReplays()
@@ -72,30 +75,52 @@ namespace ReplayManagerv1
                 DirectoryInfo dinfo = new DirectoryInfo(Path.GetFullPath(replayDirectory));
                 FileInfo[] Files = dinfo.GetFiles("*.rofl");
                 listView1.Clear();
-                listView1.Columns.Add("File Name", -2);
-                listView1.Columns.Add("Date Created", -2);
+                replayFiles.Clear();
+                listView1.Columns.Add("Delete", 50);
+                listView1.Columns.Add("File Name", 200);
+                listView1.Columns.Add("Date Created", 100);
 
                 foreach (FileInfo file in Files)
                 {
-                    string[] details = new string[2];
-                    details[0] = file.Name; details[1] = file.CreationTime.ToString("HH:mm dd/MM/yyyy");
+                    replayFiles.Add(file.Name, file);
+                    string[] details = new string[3];
+                    details[0] = "  "; details[1] = file.Name; details[2] = file.CreationTime.ToString("HH:mm dd/MM/yyyy");
                     ListViewItem item = new ListViewItem(details);
                     listView1.Items.Add(item);
                 }
-
-                listView1.MouseDoubleClick += new MouseEventHandler(listView1_MouseDoubleClick);
+                this.label1.Text = "Double click a row to launch replay!";
             }
             catch (Exception e)
             {
-                this.label1.Text = "File directories not correct, please check folder paths in settings!" + counter;
+                this.label1.Text = "No replay files (.rofl) found, perhaps check Replay directory settings?";
             }
+        }
 
+        private void listView1_ItemCheck(object sender, System.Windows.Forms.ItemCheckEventArgs e)
+        {
+            ListViewItem current = listView1.Items[e.Index];
+            FileInfo currentFile = replayFiles[current.SubItems[1].Text];
+
+            if (e.NewValue == CheckState.Checked)
+            {
+                markedItems.Add(currentFile);
+            } else if (e.NewValue == CheckState.Unchecked)
+            {
+                if (markedItems.Contains(currentFile))
+                {
+                    markedItems.Remove(currentFile);
+                }
+            }
         }
 
         private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             ListViewHitTestInfo info = listView1.HitTest(e.X, e.Y);
-            ListViewItem item = info.Item;
+            //ListViewItem item = info.Item;
+            ListViewItem item = listView1.FocusedItem;
+            FileInfo selectedItem = replayFiles[item.SubItems[1].Text];
+
+            string test = "\"League Of Legends.exe\" \"" + selectedItem.FullName; 
 
             if (item != null)
             {
@@ -103,10 +128,27 @@ namespace ReplayManagerv1
                 string leaguePath = leagueDirectory;
                 process.StartInfo.FileName = "League of Legends.exe";
                 process.StartInfo.WorkingDirectory = Path.GetDirectoryName(leaguePath);
-                process.StartInfo.Arguments = "\"League Of Legends.exe\" \"" + replayDirectory + "\\" + item.Text;
+                process.StartInfo.Arguments = "\"League Of Legends.exe\" \"" + selectedItem.FullName;
                 process.Start();
             }
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            refreshReplays();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //string test = "";
+            //int counter = 0;
+            foreach (FileInfo file in markedItems)
+            {
+                file.Delete();
+            }
+
+            refreshReplays();
+            //MessageBox.Show(test + counter);
         }
 
         // Bring up a dialog to open a file.
@@ -123,7 +165,7 @@ namespace ReplayManagerv1
                 refreshReplays();
             } else
             {
-                this.label1.Text = "Invalid file chosen, please find the League of Legends.exe file!";
+                MessageBox.Show("Invalid file chosen, please find the League of Legends.exe file!");
             }
         }
 
@@ -141,7 +183,7 @@ namespace ReplayManagerv1
                 refreshReplays();
             } else
             {
-                this.label1.Text = "Invalid folder chosen, please choose the folder named \"Replays\"!";
+                MessageBox.Show("Invalid folder chosen, please choose the folder named \"Replays\"!");
             }
         }
     }
