@@ -36,7 +36,7 @@ namespace ReplayManagerv1
 
         private void refreshReplays()
         {
-            counter++;
+            this.label3.Visible = false;
             try
             {
                 string test = Path.GetFullPath(replayDirectory);
@@ -56,11 +56,17 @@ namespace ReplayManagerv1
                     ListViewItem item = new ListViewItem(details);
                     listView1.Items.Add(item);
                 }
+
                 this.label1.Text = "Double click a row to launch replay!";
+
+                if (Files.Length == 0)
+                {
+                    this.label3.Visible = true;
+                }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                this.label1.Text = "No replay files (.rofl) found, perhaps check Replay directory settings?";
+                this.label3.Visible = true;
             }
         }
 

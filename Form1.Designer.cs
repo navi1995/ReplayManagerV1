@@ -35,6 +35,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.listView1 = new ReplayManagerv1.ListViewEx();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -121,6 +122,18 @@
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.listView1_ItemCheck);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(230)))), ((int)(((byte)(204)))));
+            this.label3.Location = new System.Drawing.Point(243, 294);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(540, 24);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "No replays in your folder, try saving some from the client!";
+            this.label3.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,6 +141,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(10)))), ((int)(((byte)(19)))));
             this.ClientSize = new System.Drawing.Size(978, 526);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -140,6 +154,7 @@
             this.Text = "League Replay Manager";
             this.ResizeEnd += new System.EventHandler(this.Form1_ResizeEnd);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -150,6 +165,7 @@
         private System.Windows.Forms.Button button2;
         private ListViewEx listView1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label3;
     }
 }
 
