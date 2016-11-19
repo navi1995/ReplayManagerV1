@@ -24,3 +24,5 @@ D:\Users\Navi Jador\Documents\Visual Studio 2015\Projects\ReplayManagerV1\bin\De
 D:\Users\Navi Jador\Documents\Visual Studio 2015\Projects\ReplayManagerV1\obj\Debug\ReplayManagerv1.Form1.resources
 D:\Users\Navi Jador\Documents\Visual Studio 2015\Projects\ReplayManagerV1\obj\Debug\ReplayManagerv1.Properties.Resources.resources
 D:\Users\Navi Jador\Documents\Visual Studio 2015\Projects\ReplayManagerV1\obj\Debug\ReplayManagerv1.csproj.GenerateResource.Cache
+D:\Users\Navi Jador\Documents\Visual Studio 2015\Projects\ReplayManagerV1\obj\Debug\ReplayManagerv1.csprojResolveAssemblyReference.cache
+D:\Users\Navi Jador\Documents\Visual Studio 2015\Projects\ReplayManagerV1\obj\Debug\ReplayManagerv1.SettingsPage.resources
