@@ -1,3 +1,4 @@
+## RIOT ADDED THEIR OWN VIEWER, NOT NEEDED ANYMORE ##
 # ReplayManagerV1
 Simple UI for viewing, deleting and launching all your replays in a centralized location!
 Lets you launch replay files without going through the League client;
